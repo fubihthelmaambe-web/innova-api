@@ -12,6 +12,15 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fubihthelmaambe-web/innova-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fubihthelmaambe-web/innova-api/issues"
+  },
+  "homepage": "https://github.com/fubihthelmaambe-web/innova-api#readme"
 }

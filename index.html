@@ -10,7 +10,7 @@
   </style>
 </head>
 <body>
-  <h1>I-NNOVA KICKSTARTER API</h1>
+  <h1>I-NNOVA KICKSTARTER API</h1>npm
   <p><b>Note:</b> Your Express server must be running on `localhost:3000` for this to work</p>
   
   <button onclick="getAll()">GET /fellows</button>
@@ -20,26 +20,42 @@
   <h3>Result:</h3>
   <pre id="result">Click a button to test the API</pre>
 
-  <script>
-    const API = 'http://localhost:3000';
+ <script>
+  const API = 'http://localhost:3000'; // Your Express server
 
-    async function getAll() {
+  async function getAll() {
+    document.getElementById('result').textContent = "Loading...";
+    try {
       const res = await fetch(API + '/fellows');
       const data = await res.json();
       document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      document.getElementById('result').textContent = "Error: Is your server running? " + error;
     }
+  }
 
-    async function getById(id) {
+  async function getById(id) {
+    document.getElementById('result').textContent = "Loading...";
+    try {
       const res = await fetch(API + '/fellows/' + id);
       const data = await res.json();
       document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      document.getElementById('result').textContent = "Error: Is your server running? " + error;
     }
+  }
 
-    async function getByTier(tier) {
+  async function getByTier(tier) {
+    document.getElementById('result').textContent = "Loading...";
+    try {
       const res = await fetch(API + '/fellows?tier=' + tier);
       const data = await res.json();
       document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      document.getElementById('result').textContent = "Error: Is your server running? " + error;
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
